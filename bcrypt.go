@@ -1,4 +1,4 @@
-package encryption
+package cipher
 
 import (
 	"log"
@@ -32,7 +32,7 @@ func GenerateBcryptSecret(plainPwd string, cost int) (bcryptSecret string) {
 func VerifyBcryptSecret(bcryptSecret string, plainPwd string) bool {
 
 	// Since we'll be getting the hashed password from the DB it
-	// will be a string so we'll need to convert it to a byte slice
+	// will be a string. So we'll need to convert it to a byte slice
 
 	err := bcrypt.CompareHashAndPassword([]byte(bcryptSecret), []byte(plainPwd))
 	if err != nil {

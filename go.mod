@@ -1,4 +1,4 @@
-module ituknown.com/cipher
+module github.com/ituknown/go-cipher
 
 go 1.15
 
